@@ -1,0 +1,32 @@
+
+
+
+.cursor {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius:50%;
+  border: 2px solid #313131;
+  transition: all .2s ease;
+  transition-property: height, width;
+  transform: translate(-50%, -50%);
+  transform-origin: 100% 100%;
+  pointer-events: none;
+  z-index: 999999999;
+}
+
+.grow, .grow-small {
+  background: #fff;
+  mix-blend-mode: difference;
+  border: none;
+  width: 15rem;
+  height: 15rem;
+}
+
+.grow-small {
+  width: 8rem;
+  height: 8rem;
+}
+body {
+  cursor: none;
+}

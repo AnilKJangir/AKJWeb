@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js?v=3.4.0.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./mouse.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <a href="" class="link cursor-scale small">
+                Anil <br> Jangir.
+            </a>
+        </div>
+        <div class="middel">
+            <ul class="main-nav">
+                <li class="link-item">
+                    <a href="#" class="link cursor-scale small">
+                        Portfolio
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a href="#" class="link cursor-scale small">
+                        About me
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a href="#" class="link cursor-scale small">
+                        Reviews
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a href="#" class="link cursor-scale small">
+                        Projects
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul class="social-link">
+                <li class="link-item">
+                    <a href="#" class="link icon hoverable">
+                        <svg style="width: 1.1rem; height: auto;" xmlns="http://www.w3.org/2000/svg" width="9.992" height="18.655" viewBox="0 0 9.992 18.655">
+                            <path id="Icon_awesome-facebook-f" data-name="Icon awesome-facebook-f" d="M10.946,10.494l.518-3.376H8.225V4.927a1.688,1.688,0,0,1,1.9-1.824H11.6V.228A17.96,17.96,0,0,0,8.987,0C6.319,0,4.575,1.617,4.575,4.544V7.117H1.609v3.376H4.575v8.162h3.65V10.494Z" transform="translate(-1.609)" fill="#313131"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a href="#" class="link icon cursor-scale small">
+                        <svg style="width: 2.2rem; height: auto;" xmlns="http://www.w3.org/2000/svg" width="21.523" height="17.48" viewBox="0 0 21.523 17.48">
+                            <path id="Icon_awesome-twitter" data-name="Icon awesome-twitter" d="M19.311,7.737c.014.191.014.382.014.574A12.465,12.465,0,0,1,6.774,20.861,12.466,12.466,0,0,1,0,18.881a9.125,9.125,0,0,0,1.065.055,8.834,8.834,0,0,0,5.476-1.885,4.419,4.419,0,0,1-4.124-3.059,5.563,5.563,0,0,0,.833.068,4.665,4.665,0,0,0,1.161-.15A4.412,4.412,0,0,1,.874,9.581V9.526a4.443,4.443,0,0,0,1.994.56A4.418,4.418,0,0,1,1.5,4.186,12.539,12.539,0,0,0,10.6,8.8a4.98,4.98,0,0,1-.109-1.011,4.415,4.415,0,0,1,7.634-3.018,8.685,8.685,0,0,0,2.8-1.065,4.4,4.4,0,0,1-1.939,2.431,8.843,8.843,0,0,0,2.54-.683,9.482,9.482,0,0,1-2.212,2.281Z" transform="translate(0 -3.381)" fill="#313131"/>
+                          </svg>
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a href="#" class="link icon cursor-scale small">
+                        <svg style="width: 2rem; height: auto;" xmlns="http://www.w3.org/2000/svg" width="18.843" height="18.84" viewBox="0 0 18.843 18.84">
+                            <path id="Icon_awesome-instagram" data-name="Icon awesome-instagram" d="M9.418,6.827a4.83,4.83,0,1,0,4.83,4.83A4.822,4.822,0,0,0,9.418,6.827Zm0,7.97a3.14,3.14,0,1,1,3.14-3.14A3.146,3.146,0,0,1,9.418,14.8ZM15.573,6.63A1.127,1.127,0,1,1,14.446,5.5,1.124,1.124,0,0,1,15.573,6.63Zm3.2,1.143A5.575,5.575,0,0,0,17.25,3.826,5.612,5.612,0,0,0,13.3,2.3c-1.555-.088-6.217-.088-7.773,0A5.6,5.6,0,0,0,1.583,3.821,5.594,5.594,0,0,0,.061,7.769c-.088,1.555-.088,6.217,0,7.773a5.575,5.575,0,0,0,1.522,3.947A5.619,5.619,0,0,0,5.53,21.011c1.555.088,6.217.088,7.773,0a5.575,5.575,0,0,0,3.947-1.522,5.612,5.612,0,0,0,1.522-3.947c.088-1.555.088-6.213,0-7.768ZM16.762,17.21A3.179,3.179,0,0,1,14.972,19c-1.24.492-4.183.378-5.553.378S5.1,19.489,3.865,19A3.179,3.179,0,0,1,2.075,17.21c-.492-1.24-.378-4.183-.378-5.553S1.587,7.34,2.075,6.1A3.179,3.179,0,0,1,3.865,4.313c1.24-.492,4.183-.378,5.553-.378s4.317-.109,5.553.378A3.179,3.179,0,0,1,16.762,6.1c.492,1.24.378,4.183.378,5.553S17.254,15.974,16.762,17.21Z" transform="translate(0.005 -2.237)" fill="#313131"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a href="#" class="link icon cursor-scale small">
+                        <svg style="width: 2.2rem; height: auto;" xmlns="http://www.w3.org/2000/svg" width="17.746" height="17.745" viewBox="0 0 17.746 17.745">
+                            <path id="Icon_awesome-linkedin-in" data-name="Icon awesome-linkedin-in" d="M3.972,17.746H.293V5.9H3.972ZM2.131,4.282A2.141,2.141,0,1,1,4.261,2.131,2.149,2.149,0,0,1,2.131,4.282ZM17.742,17.746H14.071V11.979c0-1.375-.028-3.137-1.913-3.137-1.913,0-2.206,1.493-2.206,3.038v5.866H6.277V5.9H9.805V7.515h.051A3.866,3.866,0,0,1,13.338,5.6c3.723,0,4.408,2.452,4.408,5.637v6.508Z" transform="translate(0 -0.001)" fill="#313131"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a href="#" class="link icon cursor-scale small">
+                        <svg style="width: 1.8rem; height: auto;" xmlns="http://www.w3.org/2000/svg" width="16.142" height="20.981" viewBox="0 0 16.142 20.981">
+                            <path id="Icon_awesome-pinterest-p" data-name="Icon awesome-pinterest-p" d="M8.576.457C4.263.457,0,3.332,0,7.986c0,2.959,1.665,4.641,2.674,4.641.416,0,.656-1.16.656-1.488,0-.391-1-1.223-1-2.85a5.681,5.681,0,0,1,5.9-5.776c2.863,0,4.981,1.627,4.981,4.616,0,2.232-.9,6.419-3.8,6.419a1.867,1.867,0,0,1-1.942-1.841c0-1.589,1.11-3.128,1.11-4.767,0-2.783-3.947-2.278-3.947,1.085a4.939,4.939,0,0,0,.4,2.131c-.58,2.5-1.766,6.217-1.766,8.79,0,.795.114,1.576.189,2.371.143.16.071.143.29.063,2.119-2.9,2.043-3.468,3-7.264a3.41,3.41,0,0,0,2.913,1.513c4.464,0,6.47-4.351,6.47-8.273C16.142,3.181,12.536.457,8.576.457Z" transform="translate(0 -0.457)" fill="#313131"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="intro-section section-width">
+            <div class="left-side">
+                <div class="inner">
+                    <div class="top cursor-scale small">
+                        Hi! I’m 
+                    </div>
+                    <div class="heading cursor-scale">
+                        Anil Jangir
+                    </div>
+                    <div class="content cursor-scale small">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    </div>
+                    <div class="btn cursor-scale small">
+                        Hire ME
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="inner">
+                    <img class="profile-image cursor-scale" src="./aniljangir159.png" alt="">
+                </div>
+            </div>
+            <a href="" class="explore-more cursor-scale small cursor-scale small">
+                Explore more
+                <svg xmlns="http://www.w3.org/2000/svg" width="10.392" height="21.141" viewBox="0 0 10.392 21.141">
+                    <path id="Icon_awesome-long-arrow-alt-down" data-name="Icon awesome-long-arrow-alt-down" d="M8.342,17.065V2.816a.566.566,0,0,0-.566-.566H5.133a.566.566,0,0,0-.566.566V17.065H2.393A1.133,1.133,0,0,0,1.592,19l4.061,4.061a1.132,1.132,0,0,0,1.6,0L11.316,19a1.133,1.133,0,0,0-.8-1.933H8.342Z" transform="translate(-1.258 -2.25)"/>
+                </svg>
+            </a>
+        </div>
+        <div class="timeline-section section-width">
+            <div class="score">
+                <h1 class="title-s cursor-scale" data-heading="120+">
+                    120+
+                </h1>
+                <span class="content cursor-scale small">
+                    Successful projects
+                </span>
+            </div>
+            <div class="score">
+                <h1 class="title-s cursor-scale" data-heading="10+">
+                    10+
+                </h1>
+                <span class="content cursor-scale small">
+                    years of experience
+                </span>
+            </div>
+            <div class="score">
+                <h1 class="title-s cursor-scale" data-heading="1000+">
+                    1000+
+                </h1>
+                <span class="content cursor-scale small">
+                    Cups of coffee
+                </span>
+            </div>
+        </div>
+        <div class="project-section section-width">
+            <div class="header-top">
+                <h2 class="heading-1 cursor-scale" data-heading="Case Studies &nbsp;&nbsp;&nbsp;&nbsp;  & projects">
+                    Case Studies <br>  & projects
+                </h2>
+                <span class="line-s"></span>
+            </div>
+            <div class="project-area">
+                <div class="card">
+                    <div class="left-side">
+                        <div class="inner">
+                            <p class="top-s cursor-scale small">
+                                Sample project #1
+                            </p>
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            </div>
+                            <a href="" class="explore-more cursor-scale small hoverable">
+                                Explore more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21.141" height="10.392" viewBox="0 0 21.141 10.392">
+                                    <path id="Icon_awesome-long-arrow-alt-down" data-name="Icon awesome-long-arrow-alt-down" d="M8.342,17.065V2.816a.566.566,0,0,0-.566-.566H5.133a.566.566,0,0,0-.566.566V17.065H2.393A1.133,1.133,0,0,0,1.592,19l4.061,4.061a1.132,1.132,0,0,0,1.6,0L11.316,19a1.133,1.133,0,0,0-.8-1.933H8.342Z" transform="translate(-2.25 11.65) rotate(-90)"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="inner">
+                            <img src="./p-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="left-side">
+                        <div class="inner">
+                            <p class="top-s cursor-scale small">
+                                Sample project #2
+                            </p>
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            </div>
+                            <a href="" class="explore-more cursor-scale small">
+                                Explore more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21.141" height="10.392" viewBox="0 0 21.141 10.392">
+                                    <path id="Icon_awesome-long-arrow-alt-down" data-name="Icon awesome-long-arrow-alt-down" d="M8.342,17.065V2.816a.566.566,0,0,0-.566-.566H5.133a.566.566,0,0,0-.566.566V17.065H2.393A1.133,1.133,0,0,0,1.592,19l4.061,4.061a1.132,1.132,0,0,0,1.6,0L11.316,19a1.133,1.133,0,0,0-.8-1.933H8.342Z" transform="translate(-2.25 11.65) rotate(-90)"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="inner">
+                            <img src="./p-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="left-side">
+                        <div class="inner">
+                            <p class="top-s cursor-scale small">
+                                Sample project #3
+                            </p>
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            </div>
+                            <a href="" class="explore-more cursor-scale small">
+                                Explore more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21.141" height="10.392" viewBox="0 0 21.141 10.392">
+                                    <path id="Icon_awesome-long-arrow-alt-down" data-name="Icon awesome-long-arrow-alt-down" d="M8.342,17.065V2.816a.566.566,0,0,0-.566-.566H5.133a.566.566,0,0,0-.566.566V17.065H2.393A1.133,1.133,0,0,0,1.592,19l4.061,4.061a1.132,1.132,0,0,0,1.6,0L11.316,19a1.133,1.133,0,0,0-.8-1.933H8.342Z" transform="translate(-2.25 11.65) rotate(-90)"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="inner">
+                            <img src="./p-3.png" alt="">
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="reviews-section section-width">
+            <div class="header-top">
+                <h2 class="heading-1 cursor-scale " data-heading="My clients &nbsp;&nbsp;&nbsp;&nbsp;  reviews">
+                    My clients <br> reviews
+                </h2>
+                <span class="line-s"></span>
+            </div>
+            <div class="review-area owl-carousel owl-theme">
+                <div class="card">
+                    <div class="inner">
+                        <p class="title-s">
+                            John Doe
+                        </p>
+                        <div class="content">
+                            " Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. "
+                        </div>
+                        <div class="quats">,,</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="inner">
+                        <p class="title-s">
+                            John Doe
+                        </p>
+                        <div class="content cursor-scale">
+                            " Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. "
+                        </div>
+                        <div class="quats">,,</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="inner">
+                        <p class="title-s">
+                            John Doe
+                        </p>
+                        <div class="content">
+                            " Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. "
+                        </div>
+                        <div class="quats">,,</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="inner">
+                        <p class="title-s">
+                            John Doe
+                        </p>
+                        <div class="content">
+                            " Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. "
+                        </div>
+                        <div class="quats">,,</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-section section-width">
+            <form action="" class="contact-form">
+                <div class="inner">
+                    <div class="form-element">
+                        <input class="input-element w-50" type="text" name="first_name" placeholder="First name">
+                        <input class="input-element w-50" type="text" name="last_name" placeholder="Last name">
+                        <input class="input-element w-50" type="email" name="email" placeholder="Email">
+                        <select class="input-element w-50" name="subject" id="subject">
+                            <option selected value="nil">Subject</option>
+                            <option value="one">One</option>
+                            <option value="two">Two</option>
+                            <option value="three">Three</option>
+                        </select>
+                        <textarea class="input-element w-100" name="body" id="body" placeholder="Message"></textarea>
+                        <button class="btn cursor-scale small" type="submit">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="inner">
+            <div class="card main">
+                <div class="logo cursor-scale small">
+                    <a href="" class="link">
+                        Anil <br> Jangir.
+                    </a>
+                </div>
+                <div class="content">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd 
+                </div>
+            </div>
+            <div class="card link-container">
+                <h3 class="heading">
+                    Contact me
+                </h3>
+                <ul class="links contact">
+                    <li class="title">
+                        Call me
+                    </li>
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            +21 8742 324
+                        </a>
+                    </li>
+                    <li class="title">
+                        Email me
+                    </li>
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            info@AnilJangir.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card link-container">
+                <h3 class="heading">
+                    Short links
+                </h3>
+                <ul class="links">
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            Home
+                        </a>
+                    </li>
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            About
+                        </a>
+                    </li>
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            Hire Me
+                        </a>
+                    </li>
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            Case Studies
+                        </a>
+                    </li>
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            Contact
+                        </a>
+                    </li>
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            Testimonials
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card link-container">
+                <h3 class="heading">
+                    Follow me
+                </h3>
+                <ul class="links">
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            <svg style="width: 1.1rem; height: auto;" id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg" width="10.9" height="20.351" viewBox="0 0 10.9 20.351">
+                                <path id="Icon_awesome-facebook-f" data-name="Icon awesome-facebook-f" d="M11.8,11.447l.565-3.683H8.826V5.374A1.842,1.842,0,0,1,10.9,3.385h1.607V.249A19.593,19.593,0,0,0,9.657,0C6.747,0,4.845,1.764,4.845,4.957V7.764H1.609v3.683H4.845v8.9H8.826v-8.9Z" transform="translate(-1.609)"/>
+                            </svg>
+                            Facebook
+                        </a>
+                    </li>
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            <svg style="width: 2rem; height: auto;" id="Group_2" data-name="Group 2" xmlns="http://www.w3.org/2000/svg" width="18.06" height="14.668" viewBox="0 0 18.06 14.668">
+                                <path id="Icon_awesome-twitter" data-name="Icon awesome-twitter" d="M16.2,7.036c.011.16.011.321.011.481A10.459,10.459,0,0,1,5.684,18.049,10.46,10.46,0,0,1,0,16.387a7.657,7.657,0,0,0,.894.046,7.413,7.413,0,0,0,4.6-1.581,3.708,3.708,0,0,1-3.461-2.567,4.668,4.668,0,0,0,.7.057,3.915,3.915,0,0,0,.974-.126A3.7,3.7,0,0,1,.733,8.583V8.538a3.728,3.728,0,0,0,1.673.47,3.707,3.707,0,0,1-1.146-4.95A10.521,10.521,0,0,0,8.893,7.93,4.178,4.178,0,0,1,8.8,7.082,3.7,3.7,0,0,1,15.207,4.55a7.287,7.287,0,0,0,2.349-.894A3.691,3.691,0,0,1,15.929,5.7a7.42,7.42,0,0,0,2.131-.573A7.957,7.957,0,0,1,16.2,7.036Z" transform="translate(0 -3.381)"/>
+                            </svg>
+                            Twitter
+                        </a>
+                    </li>
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            <svg style="width: 2rem; height: auto;" id="Group_3" data-name="Group 3" xmlns="http://www.w3.org/2000/svg" width="16.647" height="16.647" viewBox="0 0 16.647 16.647">
+                                <path id="Icon_awesome-linkedin" data-name="Icon awesome-linkedin" d="M15.458,2.25H1.185A1.194,1.194,0,0,0,0,3.45V17.7a1.194,1.194,0,0,0,1.185,1.2H15.458a1.2,1.2,0,0,0,1.189-1.2V3.45A1.2,1.2,0,0,0,15.458,2.25ZM5.031,16.519H2.564V8.574H5.035v7.944ZM3.8,7.489A1.431,1.431,0,1,1,5.228,6.059,1.431,1.431,0,0,1,3.8,7.489ZM14.28,16.519H11.813V12.654c0-.922-.019-2.107-1.282-2.107-1.286,0-1.483,1-1.483,2.04v3.931H6.581V8.574H8.948V9.659h.033a2.6,2.6,0,0,1,2.337-1.282c2.5,0,2.962,1.646,2.962,3.786Z" transform="translate(0 -2.25)"/>
+                            </svg>
+                              
+                            Linked In
+                        </a>
+                    </li>
+                    <li class="link-item">
+                        <a class="link cursor-scale small" href="">
+                            <svg style="width: 2.3rem; height: auto;" id="Group_4" data-name="Group 4" xmlns="http://www.w3.org/2000/svg" width="19.654" height="13.819" viewBox="0 0 19.654 13.819">
+                                <path id="Icon_awesome-youtube" data-name="Icon awesome-youtube" d="M20.294,6.662a2.47,2.47,0,0,0-1.738-1.749C17.023,4.5,10.877,4.5,10.877,4.5s-6.146,0-7.679.413A2.47,2.47,0,0,0,1.461,6.662a25.907,25.907,0,0,0-.411,4.761,25.907,25.907,0,0,0,.411,4.761A2.433,2.433,0,0,0,3.2,17.906c1.533.413,7.679.413,7.679.413s6.146,0,7.679-.413a2.433,2.433,0,0,0,1.738-1.721,25.907,25.907,0,0,0,.411-4.761,25.907,25.907,0,0,0-.411-4.761ZM8.867,14.346V8.5L14,11.424,8.867,14.346Z" transform="translate(-1.05 -4.5)"/>
+                            </svg>
+                            Youtube
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="cursor"></div>
+    <script src="./script.js"></script>
+    <script src="./mouse.js"></script>
+</body>
+</html>
